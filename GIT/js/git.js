@@ -38,7 +38,21 @@ RAMAS -> se crean copias de una version para trabajar una alternativa diferente 
 "Git checkout -b {nueva_rama}"
 Lugeo de checkout verificar que en el costado diga en la rama en la que estoy trabajando
 
-"git branch -l" -> muestra todas las ramas y marca en la que estoy posicionado
+"git branch -l" -> muestra todas las ramas y marca con * la que estoy posicionado/trabajando
+
+"git checkout {nombre_rama}" -> permite navegar en la rama {nombre_rama}
+"git checkout {nombre_commit}" -> permite navegar en el commit {nombre_commit}
+
+"git switch {nombre_rama}" -> hace un switch a la rama {nombre_rama}, cambia de una rama a la otra
+
+Desde Master:
+"git merge {nombre_rama}" -> hace merge de lo que estaba en rama1 y master. Tener en cuenta que primero hay que hacer add y commit en {nombre_rama} para luego poder hacer un merge
+
+
+
+////////////////////////////
+GITHUB - GITLAB - BITBUCKET
+
 
 
 
