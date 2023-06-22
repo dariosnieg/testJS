@@ -27,4 +27,20 @@ Puedo hacer un restore para volver los cambios hacia atras.
 "git restore {nombre_archivo}"
 
 
+---
+"git log" -> muestra log de los cambios hechos en el repositorio (commits y cambios del repo)
+
+---
+"git status" -> muestra status del repositorio, qué archivos no fueron commiteados, etc
+
+----
+RAMAS -> se crean copias de una version para trabajar una alternativa diferente sin afectar el desarrollo actual de esa rama.
+"Git checkout -b {nueva_rama}"
+Lugeo de checkout verificar que en el costado diga en la rama en la que estoy trabajando
+
+"git branch -l" -> muestra todas las ramas y marca en la que estoy posicionado
+
+
+
+
 */
