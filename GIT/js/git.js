@@ -53,6 +53,7 @@ Desde Master:
 ////////////////////////////
 GITHUB - GITLAB - BITBUCKET
 
+Creo el repositorio y uso la 2da opción, avisando que ya tengo el repositorio creado
 
 
 
