@@ -55,7 +55,7 @@ GITHUB - GITLAB - BITBUCKET
 
 Creo el repositorio y uso la 2da opción, avisando que ya tengo el repositorio creado
 
-
+git push origin -> sube cambios al repositorio online
 
 
 */
