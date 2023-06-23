@@ -57,5 +57,8 @@ Creo el repositorio y uso la 2da opción, avisando que ya tengo el repositorio c
 
 git push origin -> sube cambios al repositorio online
 
+//
+Clonar repo de github -> copia todo el repositorio remoto a local
+git clone {url_repositorio}
 
 */
