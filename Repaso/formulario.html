@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form class="form-contacto">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" onblur name="nombre" id="nombre">
+        </div>
+        <div>
+            <label for="edad">Edad:</label>
+            <input type="number" name="edad" id="edad">
+        </div>
+
+        <div>
+            <label for="provincia">Provincia:</label>
+            <select name="provincia" id="provincia">
+                <option value="BA">Buenos Aires</option>
+                <option value="CBA">Cordoba</option>
+            </select>
+        </div>
+
+        <div class="mensaje"></div>
+
+        <button type="submit">Enviar</button>
+        <button type="reset" id="reset">Reset</button>
+        <button type="button" id="btn-procesar">Procesar</button>
+
+    </form>
+    <script src="js/formulario.js"></script>
+</body>
+</html>
