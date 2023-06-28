@@ -50,3 +50,13 @@ form.addEventListener('submit', event =>{
         span.textContent = '';
     }
 });
+
+function resaltar(){
+    var p = document.getElementById("parrafo-4");
+    p.style.color = 'Red';
+}
+
+function resetear(){
+    var p = document.getElementById("parrafo-4");
+    p.style.color = 'black';
+}
