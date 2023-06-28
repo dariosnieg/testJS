@@ -2,7 +2,7 @@ const boton = document.querySelector('#btn-promedio');
 const botonMejorMateria=document.querySelector('#btn-mejornota')
 const matematica = document.querySelector('#txtMatematica');
 
-matematica.addEventListener('keypress', event => {
+matematica.addEventListener('keyup', event => {
     const mat = document.getElementById('txtMatematica');
     const divmat = document.getElementById('divMatematica');
     if (matematica.value.length>0){
@@ -23,7 +23,7 @@ matematica.addEventListener('keypress', event => {
 });
 
 const ingles = document.querySelector('#txtIngles');
-ingles.addEventListener('keypress', event => {
+ingles.addEventListener('keyup', event => {
     const ingles = document.getElementById('txtIngles');
     const divingles = document.getElementById('divIngles');
     if (ingles.value.length>0){
@@ -43,7 +43,7 @@ ingles.addEventListener('keypress', event => {
     }
 });
 const lengua = document.querySelector('#txtLengua');
-lengua.addEventListener('keypress', event => {
+lengua.addEventListener('keyup', event => {
     const lengua = document.getElementById('txtLengua');
     const divlengua = document.getElementById('divLengua');
     if (lengua.value.length>0){
@@ -188,6 +188,10 @@ reset.addEventListener('click', () =>{
     document.getElementById('errorMat').style.display='none';
     document.getElementById('resultado').style.display='none';
     document.getElementById('mejorMateria').style.display='none';
+    document.getElementById('divMatematica').setAttribute('class', 'form-group has-feedback');
+    document.getElementById('divIngles').setAttribute('class', 'form-group has-feedback');
+    document.getElementById('divLengua').setAttribute('class', 'form-group has-feedback');
+
 
     matematica.focus();
 });
