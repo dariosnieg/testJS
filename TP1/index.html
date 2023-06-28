@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>TP1</title>
+</head>
+<body>
+    <form>    
+        <div class="container">
+
+            <div class="form-group has-feedback" id="divMatematica">
+                <label for="notaMatematica">Nota Matematica</label>
+                <input type="text" class="form-control"  id="txtMatematica">
+                <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none;" id="okMat"></span>
+                <span class="glyphicon glyphicon-remove form-control-feedback" style="display:none;" id="errorMat"></span>
+            </div>
+            <div class="form-group has-feedback" id="divLengua">
+                <label for="notaLengua">Nota Lengua</label>
+                <input type="text" class="form-control" id="txtLengua">
+                <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none;" id="okLengua"></span>
+                <span class="glyphicon glyphicon-remove form-control-feedback" style="display:none;" id="errorLengua"></span>
+            </div>
+            <div class="form-group has-feedback" id="divIngles">
+                <label for="notaIngles">Nota Ingles</label>
+                <input type="text" class="form-control" id="txtIngles">
+                <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none;" id="okIngles"></span>
+                <span class="glyphicon glyphicon-remove form-control-feedback" style="display:none;" id="errorIngles"></span>
+            </div>
+
+            <button type="button" id="btn-promedio" class="btn btn-default">Promedio</button>
+            <button type="button" id="btn-mejornota" class="btn btn-default">Mejor Nota</button>
+            <button type="reset" id="reset" class="btn btn-default">Reset</button>
+            <div id="resultadoObtenido">
+                <span style="display: none;" id="resultado">Resultado: </span>
+                <span style="display: none;" id="mejorMateria">Mejor materia: </span>
+            </div>
+            
+        </div>
+    </form>    
+    <script src="js/script.js"></script>
+</body>
+</html>
