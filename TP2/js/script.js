@@ -58,8 +58,6 @@ function cargarTaskList(){
             cargarTaskList();
         };
 
-        //elementoCreado.addEventListener('mouseover', showTaskDate); 
-
         elementoCreado.innerHTML = element.task;
         document.getElementById('listadoTask').appendChild(elementoCreado);
     });    
