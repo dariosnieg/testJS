@@ -12,6 +12,7 @@ function eliminoElementoArray(posicion){
 }
 
 agregarTask.addEventListener('click', () => {
+    event.preventDefault();
     var newTask = document.getElementById('task');
     //agregarNewTask();
         objeto = {};
@@ -47,7 +48,7 @@ function cargarTaskList(){
             elementoCreado.style.textDecoration = 'line-through';
         }
         
-        elementoCreado.onClick = () => {
+        elementoCreado.onclick = () => {
             element.tachado=!element.tachado;
             if(element.tachado){
                 element.timeDelete = Date.now();
@@ -58,18 +59,12 @@ function cargarTaskList(){
             cargarTaskList();
         };
 
+        //elementoCreado.addEventListener('mouseover', showTaskDate); 
+
         elementoCreado.innerHTML = element.task;
         document.getElementById('listadoTask').appendChild(elementoCreado);
     });    
 }
-
-/*function updateTask(){
-    var task = document.getElementById('a');
-    var s = document.createElement('s');
-    s.innerHTML = task.task;
-    document.getElementById('a') = '';
-    document.getElementById('a').appendChild(s);
-}*/
 
 function resetListado(){
     borroListado();
