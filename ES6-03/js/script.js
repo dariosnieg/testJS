@@ -1,27 +1,58 @@
 class Vehiculo {
 
-    constructor(id='sin patente', nasta=100){
+    constructor(id='sin patente', nasta=100) {
         this.patente = id;
         this.nafta = nasta;
     }
     
-    manejar(km){
-        console.log(`${this.patente} Estoy por manejar ${km}km...`)
-        this.nafta=this.nafta-km;
-        console.log(`${this.patente} Me quedan ${this.nafta} litros de nafta...`)
+    manejar(km) {
+        console.log(`[${this.patente}] Estoy por manejar ${km}km...`)
     }
 }
 
-const auto = new Vehiculo('AA123BV', 100);
+class Auto extends Vehiculo{
+    manejar(km) {
+        super.manejar(km);
+        this.nafta=this.nafta-km;
+        console.log(`[${this.patente}] Me quedan ${this.nafta} litros de nafta...`)
+    }
+}
+
+class Moto extends Vehiculo{
+    manejar(km) {
+        super.manejar(km);
+        this.nafta=this.nafta-km/2;
+        console.log(`[${this.patente}] Me quedan ${this.nafta} litros de nafta...`)
+    }
+    
+}
+
+class Bicicleta extends Vehiculo{
+    constructor() {
+        super(); //llamá al constructor de la clase padre, sirve para llamar a algo de la clase padre.
+        this.patente = 'Soy una bici, no tengo patente';
+    }
+    manejar(km) {
+        super.manejar(km);
+        //La bicicleta no gasta nafta
+        //this.nafta=this.nafta-km/2;
+        console.log(`[${this.patente}] No gasté nafta, soy ecológico...`)
+    }
+}
+
+const auto = new Auto('AA123BV', 100);
 auto.manejar(10);
 auto.manejar(30);
 
-const otroAuto = new Vehiculo('CA123BC', 200);
+const otroAuto = new Auto('CA123BC', 200);
 otroAuto.manejar(10);
 otroAuto.manejar(50);
 
-const moto = new Vehiculo();
+const moto = new  Moto('MOTO');
 moto.manejar(20);
+
+const bici = new Bicicleta('000');
+bici.manejar(30);
 
 /*
 const auto = {
