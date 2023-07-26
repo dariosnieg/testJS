@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React 01</title>
+</head>
+<body>
+    <div id="root"></div>
+    <div id="boton"></div>
+    <div id="mensaje"></div>
+    <div id="usuarios"></div>
+    <div id="usuariosv2"></div>
+    
+
+    <!-- Core Library-->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <!-- React DOM Library-->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Para convertir código en ES6 a ES5-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    
+    <script type="text/babel"> //solo para este ejemplo voy a utilizar esto, pq necesito usar jsx
+        class App extends React.Component { // Creo clase que se llama app para crear un componente llamado App. 
+            // Mi clase App va a heredar todos los componentes de React.Component
+            render() {
+                return <h1> Hola {this.props.nombre} {this.props.apellido}</h1> //uso propiedades de react (los paso como parámetro)
+            }
+            // devuelve un http cuando use el componente de tipo render
+        }
+
+        class Boton extends React.Component{
+            render() {
+                return <button onClick={this.mostrarAlert}>BOTON</button>
+            }
+
+            mostrarAlert(){
+                alert("hola soy un alert!");
+            }
+        }
+
+        class Hola extends React.Component{
+            render(){
+                return <h1> Hola {this.props.name}! </h1>
+            }
+        }
+        class Chau extends React.Component{
+            render(){
+                return <h1> Bye {this.props.name}! </h1>
+            }
+        }
+
+        class Usuarios extends React.Component{
+            render(){
+                return (
+                    <ul>
+                        <li>Daro</li>
+                        <li>Feli</li>
+                        <li>Melu</li>
+                        <li>TBC</li>
+                    </ul>
+                )
+            }
+        }
+
+        class UsuariosV2 extends React.Component{ //Componente Añidado
+            render(){
+                return (
+                    <ul>
+                        <User nombre = "Dario" edad="37"/>
+                        <User nombre = "Feli" edad="2"/>
+                        <User nombre = "Melu" edad="34"/>
+                        <User nombre = "TBC" edad="0"/>
+                    </ul>
+                )
+            }
+        }
+
+        class User extends React.Component{
+            render() {
+                return(
+                    <li>
+                        <span>{this.props.nombre}</span>
+                        <span>{this.props.edad} años</span>
+                    </li>
+                );
+            }
+        }
+
+        // Utilizo Render con condicionales
+        ReactDOM.render(
+            <div> 
+                { Math.random() > 0.5 ? <Hola name="Dario" /> : <Chau name="Daro" />}
+            </div>
+        , document.getElementById('mensaje'))
+
+        ReactDOM.render(<App nombre="Dario" apellido="Snieg"/>, document.getElementById('root')) // Librería de react para manipular el DOM
+        ReactDOM.render(<Usuarios />, document.getElementById('usuarios')) 
+        ReactDOM.render(<UsuariosV2 />, document.getElementById('usuariosv2')) 
+        ReactDOM.render(<Boton />, document.getElementById('boton'))
+        // Recibe dos parametros: componente app y dónde quiero mostrarlo
+
+
+        //Lista v2 -> componente anidado
+
+    </script>
+
+</body>
+</html>
