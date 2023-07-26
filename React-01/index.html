@@ -11,8 +11,11 @@
     <div id="mensaje"></div>
     <div id="usuarios"></div>
     <div id="usuariosv2"></div>
+    <div id="app2"></div>
+    <div id="soplon"></div>
     
 
+    <script src="js/script.js"></script>
     <!-- Core Library-->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 
@@ -90,6 +93,55 @@
             }
         }
 
+        class App2 extends React.Component {
+            constructor(){
+                super(); // Siempre que en react cree el constructor,voy a tener que usar super() para que traiga el constructor de react.component 
+                         // y no lo pise
+                this.nombre = ["Dario", "Felipe","Melanie"]
+            }
+            render(){
+                return(
+                    <UsuariosApp2 lista={this.nombre} />
+                )
+            }
+        }
+
+        
+        class UsuariosApp2 extends React.Component{ //Componente Añidado
+            render(){
+                return (
+                    <ul>
+                        {
+                            this.props.lista.map(function(n){
+                                return (<Opcion nombre={n} />)
+                            })
+                        }
+                    </ul>
+                )
+            }
+        }
+
+        
+        class Opcion extends React.Component{ //Componente Añidado
+            render(){
+                return (
+                    <li>{this.props.nombre}</li>
+                )
+            }
+        }
+
+        class Soplon extends React.Component{ //Componente Añidado
+            render(){
+                return (
+                    <input type="text" onChange={this.mostrar} />
+                )
+            }
+
+            mostrar(e){
+                console.log("Escribiste:  " + e.target.value);
+            }
+        }
+        
         // Utilizo Render con condicionales
         ReactDOM.render(
             <div> 
@@ -101,6 +153,10 @@
         ReactDOM.render(<Usuarios />, document.getElementById('usuarios')) 
         ReactDOM.render(<UsuariosV2 />, document.getElementById('usuariosv2')) 
         ReactDOM.render(<Boton />, document.getElementById('boton'))
+        ReactDOM.render(<App2 />, document.getElementById('app2'))
+
+        ReactDOM.render(<Soplon />, document.getElementById('soplon'))
+
         // Recibe dos parametros: componente app y dónde quiero mostrarlo
 
 
