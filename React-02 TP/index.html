@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ES5--">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1 React</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel"> 
+    
+        class NavLink extends React.Component { 
+            render(){
+                return <li class="nav-item"><a class={this.props.clase} aria-current="page" href="#!">{this.props.texto}</a></li>;
+            }
+        }
+
+        
+        class PageTittle extends React.Component{
+            render(){
+                return <a class="navbar-brand" href="#!">{this.props.tittle}</a>;
+            }
+        }
+
+        class Navbar extends React.Component { 
+            render() {
+                return(
+                // Responsive navbar
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container px-lg-5">
+                        
+                        <PageTittle tittle="Start Bootstrap" />
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <NavLink texto="Home" clase="nav-link active" />
+                                <NavLink texto="About" clase="nav-link"/>
+                                <NavLink texto="Contact" clase="nav-link"/>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                );
+            }
+        }
+
+        class BotonBienvenida extends React.Component{
+            render(){
+                return <a class="btn btn-primary btn-lg" href="#!">{this.props.welcomebutton}</a>;
+            }
+        }
+
+        class Bienvenida extends React.Component {
+            render(){
+                return(
+                    // Header
+                    <header class="py-5">
+                        <div class="container px-lg-5">
+                            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                                <div class="m-4 m-lg-5">
+                                    <h1 class="display-5 fw-bold">A warm welcome!</h1>
+                                    <p class="fs-4">Bootstrap utility classes are used to create this jumbotron since the old component has been removed from the framework. Why create custom CSS when you can use utilities?</p>
+                                    <BotonBienvenida welcomebutton="Call to action" />
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                );
+            }
+        }
+
+        class CartitasContainer extends React.Component{
+            render(){
+                return(
+                    <section class="pt-4">
+                        <div class="container px-lg-5">
+                            <div class="row gx-lg-5">
+                                <Cartita icono="collection" titulo ="Fresh new layout" descripcion="With Bootstrap 5, we've created a fresh new layout for this template!" />
+                                <Cartita icono="download" titulo ="Free to download" descripcion="As always, Start Bootstrap has a powerful collectin of free templates." />
+                                <Cartita icono="card-heading" titulo ="Jumbotron hero header" descripcion="The heroic part of this template is the jumbotron hero header!" />
+                                <Cartita icono="bootstrap" titulo ="Feature boxes" descripcion="We've created some custom feature boxes using Bootstrap icons!" />
+                                <Cartita icono="code" titulo ="Simple clean code" descripcion="We keep our dependencies up to date and squash bugs as they come!" />
+                                <Cartita icono="patch-check" titulo ="A name you trust" descripcion="Start Bootstrap has been the leader in free Bootstrap templates since 2013!" />
+                            </div>
+                        </div>
+                    </section>
+                );
+            }
+        }
+
+        class Cartita extends React.Component{
+            render(){
+                return (
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                <i class={"bi bi-" + this.props.icono}></i></div>
+                                <h2 class="fs-4 fw-bold">{this.props.titulo}</h2>
+                                <p class="mb-0">{this.props.descripcion}</p>
+                            </div>
+                        </div>
+                    </div>
+                );
+            }
+        }
+
+        class PiePagina extends React.Component{
+            render(){
+                return(
+                    <footer class="py-5 bg-dark">
+                        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+                    </footer>
+                );
+            }
+        }
+
+        class Pagina extends React.Component {
+            render(){
+                return(
+                    <div>
+                        <Navbar />
+                        <Bienvenida />
+                        <CartitasContainer />
+                        <PiePagina />
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<Pagina />, document.getElementById('root')) // Librería de react para manipular el DOM
+    </script>
+
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core Library-->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <!-- React DOM Library-->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Para convertir código en ES6 a ES5-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
