@@ -6,8 +6,8 @@ function FormInput({Etiqueta,tipo,nombre, clase, placeHolder}){
 
     {
         tipo === 'textArea' ? 
-            <textarea name={nombre} class={clase} placeholder={placeHolder} value=""></textarea> :
-            <input type={tipo} name={nombre} class={clase} placeholder={placeHolder} value=""></input>
+            <textarea name={nombre} class={clase} placeholder={placeHolder}></textarea> :
+            <input type={tipo} name={nombre} class={clase} placeholder={placeHolder} />
 
     }
     </>

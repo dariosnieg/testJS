@@ -1,4 +1,10 @@
-function Cita({nombre, dueno, fecha, hora, sintomas, clase}){
+function Cita({nombre, dueno, fecha, hora, sintomas, clase, idcita, quitarCita}){
+    
+    const quitar = () => {
+    
+        quitarCita(idcita);
+      }
+
     return (
         <>
             <div class="cita">
@@ -7,7 +13,7 @@ function Cita({nombre, dueno, fecha, hora, sintomas, clase}){
                 <p>Fecha: <span>{fecha}</span></p>
                 <p>Hora: <span>{hora}</span></p>
                 <p>Sintomas: <span>{sintomas}</span></p>
-                <button class={clase}>Eliminar ×</button>
+                <button class={clase} onClick={quitar}>Eliminar ×</button>
             </div>
         </>
     );
