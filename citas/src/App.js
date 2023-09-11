@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 function App() {
 
-  const [citas, setCitas] = useState([]);
   const [contador, setContador] = useState(0);
   const [nombre, setNombre] = useState('Default User!!');
   const [nombres, setNombres] = useState([]);
