@@ -7,7 +7,8 @@ function Form({agregarTarea}){
         let tarea = {
             descripcion: e.target.task.value,
             id: Date.now(),
-            completado: false
+            completado: false,
+            tipo:''
         }
 
         agregarTarea(tarea);

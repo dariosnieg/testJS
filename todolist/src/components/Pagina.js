@@ -17,8 +17,18 @@ function Pagina(){
         setTodolist(todolist.filter(todo => todo.id !== id))
     }
 
-    const editarTarea = (id) => {
-        setTodolist(todolist.filter(todo => todo.id !== id))
+    const editarTarea = (id,texto) => {
+        //setTodolist(todolist.filter(todo => todo.id !== id))
+        let updatedList = []
+        updatedList = todolist.map(item => 
+            {
+              if (item.id == id){
+                return {...item, descripcion: texto}; //gets everything that was already in item, and updates "done"
+              }
+              return item; // else return unmodified item 
+            });
+        
+            setTodolist(updatedList);
     }
 
     const tacharTarea = (id) => {

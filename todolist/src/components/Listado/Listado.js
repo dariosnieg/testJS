@@ -8,7 +8,7 @@ function Listado({todolist, editar, borrar, tachar}){
                     <ElementoLista item={todo} funcEditar={editar} funcBorrar={borrar}
                         estilo={todo.completado ? { 'text-decoration': 'line-through'} : undefined}
                         clase={'list-group-item list-group-item-action taskElement text-decoration-line-through'}
-                        funcTachar={tachar}
+                        funcTachar={tachar} 
                     />
                 )}      
             </div>
